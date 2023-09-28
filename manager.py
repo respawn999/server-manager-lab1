@@ -29,30 +29,22 @@ class Job:
         self.workload = workload
 
 
-def main():
-    number_of_servers = 10
-    servers = []
-    i = 0
-    for i in range(number_of_servers):
-        servers.append(Server(5))
+    def jobQueue(self,id,workload):
+        queue = []
+        for i in range(1,51):
+            workload = random.randint(1,20)
+            job = Job(i, workload)
+            time.sleep(random.randint(2,5))
+            job.append(queue)
 
-    job_q = []
-
-    for i in range(1, 51):
-        workload = (1,10)
-        jobs = Job(i, workload)
-        job_q.append(jobs)
+        for i in queue:
+            print(i)
+        
 
 
-    for j in job_q:
-        for i, server in enumerate(servers):
-            if server.has_c(workload):
-                server.start()
-                print(f"Job {j.id} on Server {i}")
-            
+    
 
-if __name__ == "__main__":
-    main()
+
 
 
 
